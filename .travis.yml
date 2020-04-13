@@ -6,4 +6,6 @@ before_install:
   - docker build -t ochuko3d/docker-react -f Dockerfile.dev .
 
 script: 
-  - docker run ochuko3d/docker-react npm run test -- --coverage
+  - docker run -e CI=true ochuko3d/docker-react npm run test -- --coverage
+
+
